@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Group 3 Portfolio</h1>
+    </div>
+    
+    <!-- Top Name Sections -->
+    <div class="name-container">
+        <div class="banner christine">
+            <span class="name"><u>Christine</u></span>
+            <div class="content-overlay">
+                <p>Small thing to know about you</p>
+                <button onclick="window.location.href='redirectpages/christine/index.html'">View Profile</button>
+            </div>
+        </div>
+        <div class="banner earl">
+            <span class="name"><u>Earl</u></span>
+            <div class="content-overlay">
+                <p>Small thing to know about you</p>
+                <button onclick="window.location.href='redirectpages/earl/index.html'">View Profile</button>
+            </div>
+        </div>
+        <div class="banner kent">
+            <span class="name"><u>Kent</u></span>
+            <div class="content-overlay">
+                <p>Just a dude who loves music.</p>
+                <button onclick="window.location.href='redirectpages/kent/index.html'">View Profile</button>
+            </div>
+        </div>
+        <div class="banner aeron">
+            <span class="name"><u>Aeron</u></span>
+            <div class="content-overlay">
+                <p>Small thing to know about you</p>
+                <button onclick="window.location.href='redirectpages/aeron/index.html'">View Profile</button>
+            </div>
+        </div>
+        <div class="banner charlene">
+            <span class="name"><u>Charlene</u></span>
+            <div class="content-overlay">
+                <p>Small thing to know about you</p>
+                <button onclick="window.location.href='redirectpages/charlene/index.html'">View Profile</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Social Media Section -->
+    <div class="socials-section">
+        <h2 class="socials-title">Socials</h2>
+        
+        <!-- Social Row 1 -->
+        <div class="social-row">
+            <div class="social-diagonal">
+                <div class="diagonal-shape"></div>
+            </div>
+            <div class="social-content">
+                <p><strong>Facebook:</strong> test</p>
+                <p><strong>Instagram:</strong> test</p>
+            </div>
+        </div>
+        
+        <!-- Social Row 2 -->
+        <div class="social-row">
+            <div class="social-content">
+                <p><strong>Facebook:</strong> test</p>
+                <p><strong>Instagram:</strong> test</p>
+            </div>
+            <div class="social-diagonal">
+                <div class="diagonal-shape-reverse"></div>
+            </div>
+        </div>
+        
+        <!-- Social Row 3 -->
+        <div class="social-row">
+            <div class="social-diagonal">
+                <div class="diagonal-shape"></div>
+            </div>
+            <div class="social-content">
+                <p><strong>Facebook:</strong> test</p>
+                <p><strong>Instagram:</strong> test</p>
+            </div>
+        </div>
+        
+        <!-- Social Row 4 -->
+        <div class="social-row">
+            <div class="social-content">
+                <p><strong>Facebook:</strong> test</p>
+                <p><strong>Instagram:</strong> test</p>
+            </div>
+            <div class="social-diagonal">
+                <div class="diagonal-shape-reverse"></div>
+            </div>
+        </div>
+        
+        <!-- Social Row 5 -->
+        <div class="social-row">
+            <div class="social-diagonal">
+                <div class="diagonal-shape"></div>
+            </div>
+            <div class="social-content">
+                <p><strong>Facebook:</strong> test</p>
+                <p><strong>Instagram:</strong> test</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <h2>HOME PAGE WAS MADE WITH <span class="heart">  &lt;3  </span> BY <span class="signature">ME</span></h2>
+    </div>
+
+    <script>
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                rect.bottom >= 0
+            );
+        }
+        
+        // Function to handle scroll events
+        function handleScroll() {
+            const socialRows = document.querySelectorAll('.social-row');
+            
+            socialRows.forEach(row => {
+                if (isElementInViewport(row)) {
+                    row.classList.add('visible');
+                } else {
+                    row.classList.remove('visible');
+                }
+            });
+        }
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+        
+        // Trigger scroll handler on page load
+        window.addEventListener('load', handleScroll);
+
+        // Street style animation for headers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Spray paint effect for header
+            const header = document.querySelector('.header h1');
+            
+            // Create a slight animation for the header
+            header.style.transition = 'all 0.5s ease';
+            
+            header.addEventListener('mouseover', function() {
+                this.style.textShadow = '4px 4px 0 #0000cc, 8px 8px 0 rgba(0, 0, 0, 0.3)';
+                this.style.transform = 'skew(-8deg) scale(1.05)';
+            });
+            
+            header.addEventListener('mouseout', function() {
+                this.style.textShadow = '3px 3px 0 #333, 6px 6px 0 rgba(0, 0, 0, 0.3)';
+                this.style.transform = 'skew(-5deg)';
+            });
+            
+            // Name container animations
+            const names = document.querySelectorAll('.banner .name');
+            names.forEach(name => {
+                name.style.transition = 'all 0.3s ease';
+                
+                name.addEventListener('mouseover', function() {
+                    this.style.transform = 'rotate(-8deg) scale(1.2)';
+                    this.style.textShadow = '3px 3px 6px rgba(0, 0, 0, 0.7)';
+                });
+                
+                name.addEventListener('mouseout', function() {
+                    this.style.transform = 'rotate(-5deg)';
+                    this.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

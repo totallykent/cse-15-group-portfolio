@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Streetrush';
+    src: url('../../assets/fonts/Street Rush.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Backstreet';
+    src: url('../../assets/fonts/Backstreet.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DaStreet';
+    src: url('../../assets/fonts/Da Streets.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --signature-font: 'Streetrush', cursive;
+    --readable-font: 'Backstreet', sans-serif;
+    --bold-font: 'DaStreet', sans-serif;
+    --theme-color: #00cc00;
+}
+
+body {
+    font-family: var(--readable-font);
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #222;
+    box-shadow: 0 0 20px rgba(0, 204, 0, 0.5);
+    border: 3px solid var(--theme-color);
+}
+
+.header {
+    background-color: var(--theme-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: -30px -30px 30px -30px;
+    border-bottom: 3px solid #fff;
+    background-image: url('https://www.transparenttextures.com/patterns/subtle-dark-vertical.png');
+}
+
+.header h1 {
+    font-size: 48px;
+    margin: 0;
+    font-family: var(--bold-font);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 #000;
+    transform: skew(-5deg);
+}
+
+h2 {
+    font-family: var(--bold-font);
+    font-size: 32px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--theme-color);
+    padding-bottom: 10px;
+    color: var(--theme-color);
+    text-shadow: 2px 2px 0 #000;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 204, 0, 0.2);
+    border-left: 4px solid var(--theme-color);
+    font-size: 18px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: var(--theme-color);
+    color: white;
+    border: 2px solid #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--bold-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.back-button:hover {
+    background-color: #fff;
+    color: var(--theme-color);
+    transform: scale(1.05);
+} 

@@ -1,0 +1,473 @@
+@font-face {
+    font-family: 'Streetrush';
+    src: url('./assets/fonts/Street Rush.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Backstreet';
+    src: url('./assets/fonts/Backstreet.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DaStreet';
+    src: url('./assets/fonts/Da Streets.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --signature-font: 'Streetrush', cursive;
+    --readable-font: 'Backstreet', sans-serif;
+    --bold-font: 'DaStreet', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--readable-font);
+    overflow-x: hidden;
+    background-color: #1a1a1a;
+    color: #fff;
+    background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+}
+
+/* Header - Fixed to top */
+.header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 4px solid #222;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.header h1 {
+    font-size: 40px;
+    margin: 0;
+    font-family: var(--bold-font);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 3px 3px 0 #333, 
+                 6px 6px 0 rgba(0, 0, 0, 0.3);
+    transform: skew(-5deg);
+}
+
+/* Top colored sections - Adjusted to account for fixed header */
+.name-container {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.banner {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-right: 2px solid #000;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.banner:last-child {
+    border-right: none;
+}
+
+.banner:hover {
+    box-shadow: 0 0 20px 5px currentColor, inset 0 0 20px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.banner .name {
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    font-family: var(--signature-font);
+    transform: rotate(-5deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 60px;
+    display: block;
+    margin-top: 20px;
+}
+
+.banner:hover .name {
+    opacity: 0;
+}
+
+.banner .content-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transition: bottom 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+}
+
+.banner:hover .content-overlay {
+    bottom: 0;
+    opacity: 1;
+}
+
+.banner p {
+    margin: 0 0 20px 0;
+    font-family: var(--readable-font);
+    font-size: 20px;
+}
+
+.banner button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 0;
+    font-family: var(--bold-font);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.banner button:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    opacity: 0.8;
+    transform: rotate(-1deg);
+    pointer-events: none;
+    clip-path: polygon(
+        0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%,
+        100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%
+    );
+}
+
+.banner button:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 1px solid white;
+    border-radius: 5px;
+    opacity: 0.6;
+    transform: rotate(1deg);
+    pointer-events: none;
+}
+
+.banner button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.banner button:hover:before, .banner button:hover:after {
+    border-color: white;
+}
+
+.christine { 
+    background-color: #ff0000; 
+    background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
+    background-size: cover;
+    background-position: center center;
+}
+.christine:hover { 
+    box-shadow: 0 0 25px 5px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.earl { 
+    background-color: #cc00cc; 
+    background-image: url('https://www.transparenttextures.com/patterns/binding-dark.png');
+    background-size: cover;
+    background-position: center center;
+}
+.earl:hover { 
+    box-shadow: 0 0 25px 5px rgba(204, 0, 204, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.kent {
+    background-color: #0000cc;
+    background-image: url('./assets/imgs/asa.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.kent:hover {
+    box-shadow: 0 0 25px 5px rgba(0, 0, 204, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.aeron { 
+    background-color: #ff8800; 
+    background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+    background-size: cover;
+    background-position: center center;
+}
+.aeron:hover { 
+    box-shadow: 0 0 25px 5px rgba(255, 136, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.charlene { 
+    background-color: #00cc00; 
+    background-image: url('https://www.transparenttextures.com/patterns/subtle-dark-vertical.png');
+    background-size: cover;
+    background-position: center center;
+}
+.charlene:hover { 
+    box-shadow: 0 0 25px 5px rgba(0, 204, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Social media section */
+.socials-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #222;
+    border-top: 5px solid #333;
+    border-bottom: 5px solid #333;
+}
+
+.socials-title {
+    text-align: center;
+    font-size: 42px;
+    margin: 40px 0;
+    font-family: var(--bold-font);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 0 #333, 
+                 8px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.social-row {
+    display: flex;
+    margin-bottom: 200px;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.social-diagonal {
+    width: 75%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Rhombus shape instead of triangle */
+.diagonal-shape {
+    background-color: black;
+    background-image: url('test.gif');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, -30% 100%);
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+    position: relative;
+    border: 3px solid #333;
+    box-sizing: border-box;
+}
+
+.diagonal-shape::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.diagonal-shape-reverse {
+    background-color: black;
+    background-image: url('test.gif');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 130% 100%, 30% 100%);
+    transform: translateX(100%);
+    transition: transform 0.8s ease;
+    position: relative;
+    border: 3px solid #333;
+    box-sizing: border-box;
+}
+
+.diagonal-shape-reverse::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.social-row.visible .diagonal-shape {
+    transform: translateX(0);
+}
+
+.social-row.visible .diagonal-shape-reverse {
+    transform: translateX(0);
+}
+
+.social-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.8s ease;
+    opacity: 0;
+}
+
+.social-content p {
+    margin: 0;
+    font-size: 22px;
+    padding: 20px;
+    background-color: #222;
+    font-family: var(--readable-font);
+    color: #fff;
+    position: relative;
+    transform: rotate(-1deg);
+    border: none;
+    box-shadow: none;
+}
+
+.social-content p:first-child {
+    margin-bottom: 15px;
+}
+
+.social-content p:before {
+    content: none;
+}
+
+.social-content p:after {
+    content: none;
+}
+
+.social-content p strong {
+    font-family: var(--bold-font);
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0 #000;
+    transform: skew(-5deg);
+}
+
+.social-row:nth-child(even) .social-content p {
+    transform: rotate(1deg);
+}
+
+.social-row:nth-child(odd) .social-content p {
+    transform: rotate(-1deg);
+}
+
+.social-row:nth-child(even) .social-content p:before {
+    transform: skewX(5deg);
+}
+
+.social-row:nth-child(even) .social-content p:after {
+    left: auto;
+    right: -10px;
+    background: linear-gradient(to top, #fff, transparent);
+}
+
+.social-row:nth-child(even) .social-content {
+    transform: translateX(-100%);
+    align-items: flex-start;
+}
+
+.social-row:nth-child(odd) .social-content {
+    align-items: flex-end;
+}
+
+.social-row.visible .social-content {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Footer - At the bottom */
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    border-top: 4px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer h2 {
+    font-family: 'Backstreet', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+}
+
+.footer .heart {
+    font-family: 'DaStreet', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    display: inline-block;
+    transform: translateY(5px);
+    color: #ff0000;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.footer .signature {
+    font-family: var(--signature-font);
+    font-size: 1.5em;
+    display: inline-block;
+    transform: rotate(-5deg);
+}

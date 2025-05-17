@@ -23,6 +23,8 @@
     --signature-font: 'Streetrush', cursive;
     --readable-font: 'Backstreet', sans-serif;
     --bold-font: 'DaStreet', sans-serif;
+    --highlight-color: #e5ff00; /* Neon yellow-green highlight color */
+    --dark-bg: #121212;
 }
 
 body {
@@ -30,15 +32,15 @@ body {
     padding: 0;
     font-family: var(--readable-font);
     overflow-x: hidden;
-    background-color: #1a1a1a;
+    background-color: var(--dark-bg);
     color: #fff;
-    background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
 }
 
 /* Header - Fixed to top */
 .header {
     background-color: #000;
-    color: #fff;
+    color: var(--highlight-color);
     text-align: center;
     padding: 0;
     height: 10vh;
@@ -50,8 +52,8 @@ body {
     top: 0;
     left: 0;
     z-index: 100;
-    border-bottom: 4px solid #222;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border-bottom: 4px solid var(--highlight-color);
+    box-shadow: 0 0 15px rgba(229, 255, 0, 0.5);
 }
 
 .header h1 {
@@ -60,7 +62,7 @@ body {
     font-family: var(--bold-font);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--highlight-color);
     text-shadow: 3px 3px 0 #333, 
                  6px 6px 0 rgba(0, 0, 0, 0.3);
     transform: skew(-5deg);
@@ -111,6 +113,8 @@ body {
     font-size: 60px;
     display: block;
     margin-top: 20px;
+    color: var(--highlight-color);
+    text-decoration: none;
 }
 
 .banner:hover .name {
@@ -123,7 +127,7 @@ body {
     left: 0;
     right: 0;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     transition: bottom 0.5s ease;
     display: flex;
@@ -204,64 +208,103 @@ body {
     border-color: white;
 }
 
+/* Updated member color sections to match specified neon colors */
 .christine { 
-    background-color: #ff0000; 
+    background-color: #ff0043; /* Neon red */
     background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
-    background-size: cover;
-    background-position: center center;
+    border-bottom: 4px solid #ff0043;
 }
 .christine:hover { 
-    box-shadow: 0 0 25px 5px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px 10px rgba(255, 0, 67, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.christine button:before, .christine button:after {
+    border-color: #ff0043;
+}
+.christine button:hover {
+    background-color: #ff0043;
 }
 
 .earl { 
-    background-color: #cc00cc; 
+    background-color: #00ff00; /* Neon green */
     background-image: url('https://www.transparenttextures.com/patterns/binding-dark.png');
-    background-size: cover;
-    background-position: center center;
+    border-bottom: 4px solid #00ff00;
 }
 .earl:hover { 
-    box-shadow: 0 0 25px 5px rgba(204, 0, 204, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px 10px rgba(0, 255, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.earl button:before, .earl button:after {
+    border-color: #00ff00;
+}
+.earl button:hover {
+    background-color: #00ff00;
 }
 
 .kent {
-    background-color: #0000cc;
+    background-color: #00b3ff; /* Neon blue */
     background-image: url('./assets/imgs/asa.jpg');
-    background-size: cover;
-    background-position: center center;
+    border-bottom: 4px solid #00b3ff;
 }
-
 .kent:hover {
-    box-shadow: 0 0 25px 5px rgba(0, 0, 204, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px 10px rgba(0, 179, 255, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.kent button:before, .kent button:after {
+    border-color: #00b3ff;
+}
+.kent button:hover {
+    background-color: #00b3ff;
 }
 
 .aeron { 
-    background-color: #ff8800; 
+    background-color: #ff9500; /* Neon orange */
     background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
-    background-size: cover;
-    background-position: center center;
+    border-bottom: 4px solid #ff9500;
 }
 .aeron:hover { 
-    box-shadow: 0 0 25px 5px rgba(255, 136, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px 10px rgba(255, 149, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.aeron button:before, .aeron button:after {
+    border-color: #ff9500;
+}
+.aeron button:hover {
+    background-color: #ff9500;
 }
 
 .charlene { 
-    background-color: #00cc00; 
+    background-color: #ff00ff; /* Neon pink */
     background-image: url('https://www.transparenttextures.com/patterns/subtle-dark-vertical.png');
-    background-size: cover;
-    background-position: center center;
+    border-bottom: 4px solid #ff00ff;
 }
 .charlene:hover { 
-    box-shadow: 0 0 25px 5px rgba(0, 204, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px 10px rgba(255, 0, 255, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.charlene button:before, .charlene button:after {
+    border-color: #ff00ff;
+}
+.charlene button:hover {
+    background-color: #ff00ff;
 }
 
 /* Social media section */
 .socials-section {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: #222;
-    border-top: 5px solid #333;
-    border-bottom: 5px solid #333;
+    background-color: rgb(54, 52, 54);
+    border-top: 5px solid var(--highlight-color);
+    border-bottom: 5px solid var(--highlight-color);
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    position: relative;
+}
+
+/* Add overlay for lower opacity background */
+.socials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adds opacity to background */
+    z-index: 0;
 }
 
 .socials-title {
@@ -269,11 +312,13 @@ body {
     font-size: 42px;
     margin: 40px 0;
     font-family: var(--bold-font);
-    color: #fff;
+    color: var(--highlight-color);
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 4px 4px 0 #333, 
                  8px 8px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
 }
 
 .social-row {
@@ -282,6 +327,7 @@ body {
     position: relative;
     overflow: hidden;
     height: 200px;
+    z-index: 1;
 }
 
 .social-diagonal {
@@ -290,10 +336,10 @@ body {
     overflow: hidden;
 }
 
-/* Rhombus shape instead of triangle */
+/* Rhombus shape with person-specific colors */
 .diagonal-shape {
     background-color: black;
-    background-image: url('test.gif');
+    background-image: url('test.gif'); 
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -302,7 +348,7 @@ body {
     transform: translateX(-100%);
     transition: transform 0.8s ease;
     position: relative;
-    border: 3px solid #333;
+    border: 3px solid; /* Color applied in nth-child rules */
     box-sizing: border-box;
 }
 
@@ -328,7 +374,7 @@ body {
     transform: translateX(100%);
     transition: transform 0.8s ease;
     position: relative;
-    border: 3px solid #333;
+    border: 3px solid; /* Color applied in nth-child rules */
     box-sizing: border-box;
 }
 
@@ -341,6 +387,36 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
+}
+
+.social-row:nth-of-type(1) .diagonal-shape,
+.social-row:nth-of-type(1) .diagonal-shape-reverse {
+    border-color: #00b3ff; /* Kent - Neon blue */
+    box-shadow: 0 0 15px rgba(0, 179, 255, 0.5);
+}
+
+.social-row:nth-of-type(2) .diagonal-shape,
+.social-row:nth-of-type(2) .diagonal-shape-reverse {
+    border-color: #00ff00; /* Earl - Neon green */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.social-row:nth-of-type(3) .diagonal-shape,
+.social-row:nth-of-type(3) .diagonal-shape-reverse {
+    border-color: #ff0043; /* Christine - Neon red */
+    box-shadow: 0 0 15px rgba(255, 0, 67, 0.5);
+}
+
+.social-row:nth-of-type(4) .diagonal-shape,
+.social-row:nth-of-type(4) .diagonal-shape-reverse {
+    border-color: #ff9500; /* Aeron - Neon orange */
+    box-shadow: 0 0 15px rgba(255, 149, 0, 0.5);
+}
+
+.social-row:nth-of-type(5) .diagonal-shape,
+.social-row:nth-of-type(5) .diagonal-shape-reverse {
+    border-color: #ff00ff; /* Charlene - Neon pink */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
 }
 
 .social-row.visible .diagonal-shape {
@@ -362,29 +438,236 @@ body {
     opacity: 0;
 }
 
+/* Footer - At the bottom with updated colors */
+.footer {
+    background-color: black;
+    color: var(--highlight-color);
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    border-top: 4px solid var(--highlight-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(229, 255, 0, 0.3);
+}
+
+.footer h2 {
+    font-family: 'Backstreet', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Make the heart clickable */
+.footer .heart {
+    font-family: 'DaStreet', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    display: inline-block;
+    transform: translateY(5px);
+    color: #ff0043; /* Christine's neon red color for heart */
+    margin-right: 10px;
+    margin-left: 10px;
+    text-shadow: 0 0 10px rgba(255, 0, 67, 0.7);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    user-select: none;
+    z-index: 1000; /* Ensure it's above other elements */
+    position: relative; /* Ensure z-index works */
+}
+
+/* Blackout effect when activated */
+body.blackout {
+    position: relative;
+}
+
+body.blackout::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 200;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+/* Floating lanterns container */
+.lanterns-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 201;
+    pointer-events: none;
+    display: none;
+    overflow: hidden;
+}
+
+body.blackout .lanterns-container {
+    display: block;
+}
+
+/* Individual lantern styling */
+.lantern {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-image: url('./assets/images/guru.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    bottom: -70px; /* Start below the viewport */
+    animation-name: float-up;
+    animation-duration: 15s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    filter: brightness(1.2);
+}
+
+/* Floating animation */
+@keyframes float-up {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) translateX(calc(var(--rand-x) * 100px));
+        opacity: 0;
+    }
+}
+
+/* Heart glow effect when activated */
+body.blackout .footer .heart {
+    color: #ff3c6d;
+    text-shadow: 0 0 20px rgba(255, 60, 109, 1), 
+                 0 0 30px rgba(255, 60, 109, 0.8),
+                 0 0 40px rgba(255, 60, 109, 0.6),
+                 0 0 50px rgba(255, 60, 109, 0.4);
+    transform: translateY(5px) scale(1.2);
+    animation: heart-beat 1.5s infinite alternate;
+}
+
+/* Heart beat animation */
+@keyframes heart-beat {
+    0% {
+        transform: translateY(5px) scale(1.2);
+    }
+    100% {
+        transform: translateY(5px) scale(1.4);
+    }
+}
+
+.footer .signature {
+    font-family: var(--signature-font);
+    font-size: 1.5em;
+    display: inline-block;
+    transform: rotate(-5deg);
+    color: var(--highlight-color);
+}
+
+/* Social content paragraphs - box shape with neon outlines */
 .social-content p {
     margin: 0;
-    font-size: 22px;
-    padding: 20px;
-    background-color: #222;
-    font-family: var(--readable-font);
-    color: #fff;
+    font-size: 20px;
+    padding: 25px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
     position: relative;
-    transform: rotate(-1deg);
-    border: none;
-    box-shadow: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    z-index: 1;
+    margin-bottom: 20px; /* Space between boxes */
+    width: 250px; /* Control the size */
+    height: 80px; /* Control the height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: none; /* Remove the rotation */
+    clip-path: none; /* Remove rhombus shape */
+    border: 2px solid; /* Will be colored by specific rules */
+    border-radius: 4px; /* Slight rounding of corners */
+}
+
+/* Kent - Blue */
+.social-row:nth-of-type(1) .social-content p {
+    color: #00b3ff;
+    border-color: #00b3ff;
+    box-shadow: 0 0 15px 3px rgba(0, 179, 255, 0.6);
+}
+
+.social-row:nth-of-type(1) .social-content p:hover {
+    background-color: #00b3ff;
+    color: #000;
+    box-shadow: 0 0 20px 5px rgba(0, 179, 255, 0.8);
+}
+
+/* Earl - Green */
+.social-row:nth-of-type(2) .social-content p {
+    color: #00ff00;
+    border-color: #00ff00;
+    box-shadow: 0 0 15px 3px rgba(0, 255, 0, 0.6);
+}
+
+.social-row:nth-of-type(2) .social-content p:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.8);
+}
+
+/* Christine - Red */
+.social-row:nth-of-type(3) .social-content p {
+    color: #ff0043;
+    border-color: #ff0043;
+    box-shadow: 0 0 15px 3px rgba(255, 0, 67, 0.6);
+}
+
+.social-row:nth-of-type(3) .social-content p:hover {
+    background-color: #ff0043;
+    color: #000;
+    box-shadow: 0 0 20px 5px rgba(255, 0, 67, 0.8);
+}
+
+/* Aeron - Orange */
+.social-row:nth-of-type(4) .social-content p {
+    color: #ff9500;
+    border-color: #ff9500;
+    box-shadow: 0 0 15px 3px rgba(255, 149, 0, 0.6);
+}
+
+.social-row:nth-of-type(4) .social-content p:hover {
+    background-color: #ff9500;
+    color: #000;
+    box-shadow: 0 0 20px 5px rgba(255, 149, 0, 0.8);
+}
+
+/* Charlene - Pink */
+.social-row:nth-of-type(5) .social-content p {
+    color: #ff00ff;
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px 3px rgba(255, 0, 255, 0.6);
+}
+
+.social-row:nth-of-type(5) .social-content p:hover {
+    background-color: #ff00ff;
+    color: #000;
+    box-shadow: 0 0 20px 5px rgba(255, 0, 255, 0.8);
 }
 
 .social-content p:first-child {
     margin-bottom: 15px;
-}
-
-.social-content p:before {
-    content: none;
-}
-
-.social-content p:after {
-    content: none;
 }
 
 .social-content p strong {
@@ -399,22 +682,9 @@ body {
     transform: skew(-5deg);
 }
 
-.social-row:nth-child(even) .social-content p {
-    transform: rotate(1deg);
-}
-
-.social-row:nth-child(odd) .social-content p {
-    transform: rotate(-1deg);
-}
-
-.social-row:nth-child(even) .social-content p:before {
-    transform: skewX(5deg);
-}
-
-.social-row:nth-child(even) .social-content p:after {
-    left: auto;
-    right: -10px;
-    background: linear-gradient(to top, #fff, transparent);
+.social-content p:hover strong {
+    color: #000;
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.3);
 }
 
 .social-row:nth-child(even) .social-content {
@@ -432,42 +702,144 @@ body {
     transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-/* Footer - At the bottom */
-.footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    width: 100%;
-    border-top: 4px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Style for social links */
+.social-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
 }
 
-.footer h2 {
-    font-family: 'Backstreet', sans-serif;
-    font-size: 24px;
-    margin: 0;
-    font-weight: normal;
-    text-align: center;
-    display: inline-block;
+.social-link:hover {
+    text-decoration: none;
 }
 
-.footer .heart {
-    font-family: 'DaStreet', sans-serif;
-    font-size: 1.8em;
-    font-weight: bold;
-    display: inline-block;
-    transform: translateY(5px);
-    color: #ff0000;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-.footer .signature {
-    font-family: var(--signature-font);
-    font-size: 1.5em;
-    display: inline-block;
-    transform: rotate(-5deg);
+/* Mobile Responsiveness */
+@media screen and (max-width: 480px) {
+    /* Header adjustments - reduced to 5vh */
+    .header {
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Name containers adjustment - increased to 95vh */
+    .name-container {
+        flex-direction: column;
+        height: 95vh;
+        margin-top: 5vh;
+    }
+    
+    .banner {
+        height: calc(95vh / 5); /* Divide equally among 5 banners */
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 0; /* Override previous min-height */
+        position: relative;
+    }
+    
+    .banner .name {
+        font-size: 40px;
+        margin-top: 0; /* Reset margin */
+    }
+    
+    .banner:hover .content-overlay {
+        bottom: 0;
+        opacity: 1;
+    }
+    
+    .banner .content-overlay {
+        padding: 10px;
+    }
+    
+    .banner button {
+        padding: 5px 10px;
+        margin-top: 5px;
+    }
+    
+    /* Remove tap for info text */
+    .banner::after {
+        content: none;
+    }
+    
+    /* Social section adjustments */
+    .socials-title {
+        font-size: 32px;
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .social-row {
+        flex-direction: column;
+        margin-bottom: 50px;
+        height: auto;
+    }
+    
+    .social-diagonal {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    
+    .social-content {
+        width: 100%;
+        transform: none !important;
+        opacity: 1;
+        align-items: center !important;
+        padding: 0;
+    }
+    
+    .social-content p {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    /* Fix social row ordering */
+    .social-row:nth-child(even) .social-content {
+        order: 1;
+    }
+    
+    .social-row:nth-child(even) .social-diagonal {
+        order: 2;
+    }
+    
+    /* Footer adjustments */
+    .footer {
+        text-align: center;
+        padding: 20px 10px;
+    }
+    
+    .footer h2 {
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer .heart {
+        font-size: 1.5em;
+    }
+    
+    /* Fix the lanterns container for mobile */
+    .lanterns-container {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .lantern {
+        width: 50px;
+        height: 50px;
+    }
 }

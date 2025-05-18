@@ -5,8 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kent's Profile</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <a href="../../index.html" class="back-button">Back to Main Page</a>
+    <div class="navigation">
+        <a href="../../index.html" class="nav-icon back-icon">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <a href="#" class="nav-icon music-icon" id="musicToggle">
+            <i class="fa-solid fa-music"></i>
+        </a>
+    </div>
+    
+    <div class="photo-container">
+        <img src="./assets/output.jpg" alt="Photo">
+    </div>
+    
+    <div class="about-section">
+        <h1>About me</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis 
+            ipsum suspendisse ultrices gravida. Risus commodo viverra 
+            maecenas accumsan lacus vel facilisis.
+        </p>
+    </div>
+    
+    <div class="education-section">
+        <h1>Educational background</h1>
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-point point-top"></div>
+            
+            <div class="timeline-node node-1"></div>
+            <div class="timeline-node node-2"></div>
+            <div class="timeline-node node-3"></div>
+            <div class="timeline-node node-4"></div>
+            <div class="timeline-node node-5"></div>
+            
+            <div class="education-card card-right card-1">
+                <div class="card-content">
+                    <div class="school-logo">
+                        <img src="./assets/1.png" alt="School Logo 1">
+                    </div>
+                    <div class="text-container">
+                        <div class="school-name">School Name One</div>
+                        <div class="school-year">2010 - 2016</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-card card-left card-2">
+                <div class="card-content">
+                    <div class="school-logo">
+                        <img src="./assets/2.png" alt="School Logo 2">
+                    </div>
+                    <div class="text-container">
+                        <div class="school-name">School Name Two</div>
+                        <div class="school-year">2016 - 2022</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-card card-right card-3">
+                <div class="card-content">
+                    <div class="school-logo">
+                        <img src="./assets/3.png" alt="School Logo 3">
+                    </div>
+                    <div class="text-container">
+                        <div class="school-name">School Name Three</div>
+                        <div class="school-year">2022 - 2022</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-card card-left card-4">
+                <div class="card-content">
+                    <div class="school-logo">
+                        <img src="./assets/4.png" alt="School Logo 4">
+                    </div>
+                    <div class="text-container">
+                        <div class="school-name">School Name Four</div>
+                        <div class="school-year">2022 - Present</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="binary-overlay binary-1"></div>
+            <div class="binary-overlay binary-2"></div>
+        </div>
+    </div>
+    
+    <div class="languages-section">
+        <h1>Programming Languages</h1>
+        <div class="languages-container">
+            <div class="language-icon">
+                <div class="neon-python">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+                <span class="lang-caption">Python</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-java">
+                    <i class="fa-brands fa-java"></i>
+                </div>
+                <span class="lang-caption">Java</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-cpp">
+                    <i class="fa-brands fa-c"></i>
+                </div>
+                <span class="lang-caption">C/C++</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-react">
+                    <i class="fa-brands fa-react"></i>
+                </div>
+                <span class="lang-caption">React</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-csharp">
+                    <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <span class="lang-caption">C#</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-html">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <span class="lang-caption">HTML</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-css">
+                    <i class="fa-brands fa-css3"></i>
+                </div>
+                <span class="lang-caption">CSS</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-js">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+                <span class="lang-caption">JavaScript</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-php">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <span class="lang-caption">PHP</span>
+            </div>
+            <div class="language-icon">
+                <div class="neon-mysql">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <span class="lang-caption">MySQL</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>

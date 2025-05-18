@@ -226,7 +226,7 @@ body {
 
 .earl { 
     background-color: #00ff00; /* Neon green */
-    background-image: url('https://www.transparenttextures.com/patterns/binding-dark.png');
+    background-image: url('./redirectpages/earl/imgs/photopeds.png');
     border-bottom: 4px solid #00ff00;
 }
 .earl:hover { 

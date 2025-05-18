@@ -23,7 +23,13 @@
     --signature-font: 'Streetrush', cursive;
     --readable-font: 'Backstreet', sans-serif;
     --bold-font: 'DaStreet', sans-serif;
-    --theme-color: #cc00cc;
+    --theme-color: #00ff00;
+    --primary-color: #00ff00;
+    --secondary-color: #00ff99;
+    --text-color: #ffffff;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --neon-shadow: 0 0 10px;
 }
 
 body {
@@ -40,7 +46,7 @@ body {
     margin: 50px auto;
     padding: 30px;
     background-color: #222;
-    box-shadow: 0 0 20px rgba(204, 0, 204, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
     border: 3px solid var(--theme-color);
 }
 
@@ -87,7 +93,7 @@ ul {
 li {
     padding: 10px 15px;
     margin-bottom: 10px;
-    background-color: rgba(204, 0, 204, 0.2);
+    background-color: rgba(0, 255, 0, 0.2);
     border-left: 4px solid var(--theme-color);
     font-size: 18px;
 }
@@ -157,7 +163,7 @@ li {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
     animation: neon-line-movement 15s linear infinite;
-    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .neon-line:nth-child(1) {
@@ -324,29 +330,20 @@ body::after {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     border-radius: 5px;
 }
 
 .back-button:hover {
     background-color: var(--secondary-color);
     transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #00eeff;
-    --secondary-color: #ff00ff;
-    --text-color: #ffffff;
-    --dark-bg: #121212;
-    --card-bg: #1e1e1e;
-    --neon-shadow: 0 0 10px;
 }
 
 html {
@@ -497,7 +494,7 @@ section {
     margin-bottom: 2rem;
     position: relative;
     background: url('https://via.placeholder.com/200x200') center/cover;
-    box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
 .profile-image img {
@@ -546,9 +543,9 @@ section {
 .profile-text h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #a970ff;
+    color: #00ff00;
     letter-spacing: 3px;
-    text-shadow: 0 0 5px rgba(169, 112, 255, 0.5);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
     margin-bottom: 1.5rem;
 }
 
@@ -563,8 +560,8 @@ section {
         45deg,
         transparent,
         transparent 10px,
-        rgba(255, 0, 255, 0.1) 10px,
-        rgba(255, 0, 255, 0.1) 20px
+        rgba(0, 255, 0, 0.1) 10px,
+        rgba(0, 255, 0, 0.1) 20px
     );
     z-index: -1;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -705,7 +702,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(128, 0, 128, 0.1), rgba(0, 238, 255, 0.1));
+    background: linear-gradient(45deg, rgba(0, 255, 0, 0.1), rgba(0, 255, 150, 0.1));
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
     z-index: -1;
 }
@@ -770,7 +767,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(128, 0, 128, 0.1), rgba(0, 238, 255, 0.1));
+    background: linear-gradient(45deg, rgba(0, 255, 0, 0.1), rgba(0, 255, 150, 0.1));
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
     z-index: -1;
 }
@@ -853,7 +850,7 @@ section {
 
 .skill-item:hover i {
     color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
 }
 
 .skill-text {
@@ -925,7 +922,7 @@ section {
     font-weight: 600;
     color: var(--primary-color);
     font-size: 1.2rem;
-    text-shadow: 0 0 5px rgba(0, 238, 255, 0.5);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 .contact-info {
@@ -961,7 +958,7 @@ section {
 .social-link:hover {
     background-color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0, 238, 255, 0.7);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
 }
 
 .social-icon {

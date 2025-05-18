@@ -19,89 +19,482 @@
     font-style: normal;
 }
 
-:root {
-    --signature-font: 'Streetrush', cursive;
-    --readable-font: 'Backstreet', sans-serif;
-    --bold-font: 'DaStreet', sans-serif;
-    --theme-color: #0000cc;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Backstreet', sans-serif;
 }
 
 body {
-    font-family: var(--readable-font);
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a;
+    background-color: #000;
     color: #fff;
-    background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
-}
-
-.profile-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #222;
-    box-shadow: 0 0 20px rgba(0, 0, 204, 0.5);
-    border: 3px solid var(--theme-color);
-}
-
-.header {
-    background-color: var(--theme-color);
-    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    background-image: 
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%),
+        radial-gradient(circle at 50% 50%, rgba(0, 179, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.95);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 179, 255, 0.2) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.8;
+    animation: pulse-background 15s infinite alternate;
+}
+
+@keyframes pulse-background {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #00b3ff;
+    transition: all 0.3s ease;
+    border: 2px solid #00b3ff;
+    box-shadow: 0 0 8px rgba(0, 179, 255, 0.5);
+    position: relative;
+}
+
+.nav-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 179, 255, 0.7);
+}
+
+.nav-icon i {
+    font-size: 18px;
+    color: #00b3ff;
+}
+
+.music-icon {
+    cursor: pointer;
+}
+
+.music-icon.playing {
+    background-color: #00b3ff;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.music-icon.playing i {
+    color: #fff;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 5px rgba(0, 179, 255, 0.5); }
+    100% { transform: scale(1.1); box-shadow: 0 0 15px rgba(0, 179, 255, 1); }
+}
+
+.photo-container {
+    width: 60%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    margin: 50px 0;
+    background-color: #000;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid #00b3ff;
+    box-shadow: 0 0 15px rgba(0, 179, 255, 0.6);
+}
+
+.photo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 179, 255, 0.1), transparent 40%, transparent 60%, rgba(0, 179, 255, 0.1));
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Scanline effect */
+.photo-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 179, 255, 0.03) 2px,
+        rgba(0, 179, 255, 0.03) 4px
+    );
+    z-index: 3;
+    pointer-events: none;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+    filter: contrast(1.1) brightness(1.1);
+    mix-blend-mode: screen;
+}
+
+/* Glitch animation on hover */
+@keyframes glitch {
+    0% {
+        clip-path: inset(30% 0 40% 0);
+        transform: translate(-5px, 5px);
+    }
+    20% {
+        clip-path: inset(10% 0 50% 0);
+        transform: translate(5px, -5px);
+    }
+    40% {
+        clip-path: inset(70% 0 10% 0);
+        transform: translate(5px, 5px);
+    }
+    60% {
+        clip-path: inset(30% 0 30% 0);
+        transform: translate(-5px, -5px);
+    }
+    80% {
+        clip-path: inset(10% 0 60% 0);
+        transform: translate(5px, 5px);
+    }
+    100% {
+        clip-path: inset(40% 0 30% 0);
+        transform: translate(-5px, -5px);
+    }
+}
+
+.photo-container:hover::before {
+    animation: glitch 0.3s infinite;
+}
+
+.photo-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 179, 255, 0.8);
+}
+
+/* Remove the old ::after implementation that had different styling */
+.photo-container:hover::after {
+    box-shadow: 0 0 25px rgba(0, 179, 255, 0.9);
+}
+
+.about-section {
+    width: 100%;
     text-align: center;
-    margin: -30px -30px 30px -30px;
-    border-bottom: 3px solid #fff;
-    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    padding: 20px;
+    margin-bottom: 80px;
 }
 
-.header h1 {
-    font-size: 48px;
-    margin: 0;
-    font-family: var(--bold-font);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 3px 3px 0 #000;
-    transform: skew(-5deg);
-}
-
-h2 {
-    font-family: var(--bold-font);
+.about-section h1 {
+    font-family: 'DaStreet', sans-serif;
     font-size: 32px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    border-bottom: 2px solid var(--theme-color);
-    padding-bottom: 10px;
-    color: var(--theme-color);
-    text-shadow: 2px 2px 0 #000;
+    letter-spacing: 1px;
 }
 
-p {
-    font-size: 18px;
+.about-section p {
     line-height: 1.6;
+    opacity: 0.9;
+    font-family: 'Backstreet', sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.education-section {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 80px;
 }
 
-li {
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 204, 0.2);
-    border-left: 4px solid var(--theme-color);
+.education-section h1 {
+    font-family: 'DaStreet', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    perspective: 800px;
+    margin-bottom: 40px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    width: 3px;
+    height: 0;
+    background-color: #00b3ff;
+    box-shadow: 0 0 8px #00b3ff, 0 0 15px #00b3ff;
+    transform: translateX(-50%);
+    animation: growLine 2s forwards;
+    z-index: 1;
+}
+
+@keyframes growLine {
+    0% { height: 0; }
+    100% { height: 950px; }
+}
+
+.timeline-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #00b3ff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #00b3ff, 0 0 20px rgba(0, 179, 255, 0.5);
+    z-index: 2;
+}
+
+.point-top {
+    left: 50%;
+    top: 30px;
+    animation: pulseDot 2s infinite alternate;
+}
+
+@keyframes pulseDot {
+    0% { box-shadow: 0 0 10px #00b3ff, 0 0 15px rgba(0, 179, 255, 0.7); }
+    100% { box-shadow: 0 0 15px #00b3ff, 0 0 25px rgba(0, 179, 255, 1); }
+}
+
+.education-card {
+    position: absolute;
+    width: 45%;
+    height: 120px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #00b3ff;
+    text-align: center;
+    border: 1px solid #00b3ff;
+    box-shadow: 0 0 10px rgba(0, 179, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    transform-origin: center left;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.education-card:hover {
+    box-shadow: 0 0 25px rgba(0, 179, 255, 0.9);
+    transform: scale(1.05) translateX(0) !important;
+}
+
+.card-content {
+    position: relative;
+    opacity: 0;
+    animation: fadeContent 0.3s 0.7s forwards;
+    animation-delay: inherit;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Right cards (on the right side of the timeline) */
+.card-right .card-content {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* Left cards (on the left side of the timeline) */
+.card-left .card-content {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+/* Text container for both sides */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+/* Right text alignment */
+.card-right .text-container {
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Left text alignment */
+.card-left .text-container {
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* Base logo styling for both sides */
+.school-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #00b3ff;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 179, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.school-logo img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 3px #00b3ff);
+}
+
+/* Logo positioning for right cards */
+.card-right .school-logo {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+/* Logo positioning for left cards - mirrored spacing */
+.card-left .school-logo {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+/* School name styling */
+.school-name {
+    font-family: 'Backstreet', sans-serif;
+    font-weight: bold;
     font-size: 18px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(0, 179, 255, 0.5);
+    letter-spacing: 0.5px;
+}
+
+/* School year styling */
+.school-year {
+    font-family: 'DaStreet', sans-serif;
+    font-size: 14px;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+    color: #00b3ff;
+    font-weight: 500;
+    text-shadow: 0 0 3px rgba(0, 179, 255, 0.4);
+}
+
+.binary-overlay {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #00b3ff;
+    white-space: nowrap;
+    text-shadow: 0 0 5px #00b3ff;
+    pointer-events: none;
+    z-index: 3;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+}
+
+.binary-1 {
+    top: 15px;
+    left: 0;
+}
+
+.binary-1::before {
+    content: "010011101 EDUCATION.DATA 110101 010011101 EDUCATION.DATA 110101";
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    animation: pingPong 15s linear infinite alternate;
+}
+
+.binary-2 {
+    bottom: 15px;
+    left: 0;
+}
+
+.binary-2::before {
+    content: "110010 NEURAL.LINK 011001001 110010 NEURAL.LINK 011001001";
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    animation: pingPong 15s linear infinite alternate-reverse;
+}
+
+@keyframes pingPong {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.card-top {
+    right: 5%;
+    top: 0;
+}
+
+.card-bottom {
+    left: 5%;
+    bottom: 0;
 }
 
 .back-button {
     display: inline-block;
     margin-top: 30px;
     padding: 12px 25px;
-    background-color: var(--theme-color);
+    background-color: #00b3ff;
     color: white;
     border: 2px solid #fff;
     text-decoration: none;
     cursor: pointer;
-    font-family: var(--bold-font);
+    font-family: 'DaStreet', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
@@ -110,6 +503,212 @@ li {
 
 .back-button:hover {
     background-color: #fff;
-    color: var(--theme-color);
+    color: #00b3ff;
     transform: scale(1.05);
+}
+
+@keyframes fadeContent {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.timeline-node {
+    position: absolute;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #00b3ff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px #00b3ff;
+    z-index: 2;
+    opacity: 0;
+}
+
+.node-1 {
+    top: 200px;
+    animation: appearNode 0.3s 2s forwards;
+}
+
+.node-2 {
+    top: 390px;
+    animation: appearNode 0.3s 2.5s forwards;
+}
+
+.node-3 {
+    top: 580px;
+    animation: appearNode 0.3s 3s forwards;
+}
+
+.node-4 {
+    top: 770px;
+    animation: appearNode 0.3s 3.5s forwards;
+}
+
+.node-5 {
+    top: 975px;
+    animation: appearNode 0.3s 4s forwards;
+}
+
+@keyframes appearNode {
+    0% { opacity: 0; transform: translateX(-50%) scale(0); }
+    50% { transform: translateX(-50%) scale(1.5); }
+    100% { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+@keyframes unfoldRight {
+    0% { transform: scaleX(0); opacity: 0; }
+    100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes unfoldLeft {
+    0% { transform: scaleX(0); opacity: 0; }
+    100% { transform: scaleX(1); opacity: 1; }
+}
+
+.card-right {
+    left: 52%;
+    right: auto;
+    transform: scaleX(0);
+    width: 45%;
+}
+
+.card-left {
+    right: 52%;
+    left: auto;
+    transform: scaleX(0);
+    transform-origin: center right;
+    width: 45%;
+}
+
+.card-1 {
+    top: 160px;
+    animation: unfoldRight 0.7s 2s forwards;
+    left: 52%;
+    right: auto;
+}
+
+.card-2 {
+    top: 350px;
+    animation: unfoldLeft 0.7s 2.5s forwards;
+    right: 52%;
+    left: auto;
+}
+
+.card-3 {
+    top: 540px;
+    animation: unfoldRight 0.7s 3s forwards;
+    left: 52%;
+    right: auto;
+}
+
+.card-4 {
+    top: 730px;
+    animation: unfoldLeft 0.7s 3.5s forwards;
+    right: 52%;
+    left: auto;
+}
+
+/* Programming Languages Section */
+.languages-section {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 80px;
+}
+
+.languages-section h1 {
+    font-family: 'DaStreet', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.languages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.language-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #00b3ff;
+    box-shadow: 0 0 15px rgba(0, 179, 255, 0.5);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.language-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px #00b3ff);
+    z-index: 2;
+}
+
+/* Language caption styling */
+.lang-caption {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Backstreet', sans-serif;
+    font-size: 12px;
+    color: #00b3ff;
+    text-shadow: 0 0 3px #00b3ff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Highlight caption on icon hover */
+.language-icon:hover .lang-caption {
+    text-shadow: 0 0 5px #00b3ff, 0 0 8px rgba(0, 179, 255, 0.8);
+}
+
+/* Font Awesome icon styling */
+.language-icon i {
+    font-size: 40px;
+    color: #00b3ff;
+    text-shadow: 0 0 5px #00b3ff, 0 0 8px rgba(0, 179, 255, 0.7);
+    z-index: 2;
+}
+
+.language-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 179, 255, 0.9);
+}
+
+.language-icon:hover i {
+    text-shadow: 0 0 8px #00b3ff, 0 0 12px rgba(0, 179, 255, 0.8);
+}
+
+.language-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 25%, rgba(0, 179, 255, 0.1) 50%, transparent 75%);
+    background-size: 200% 200%;
+    animation: shimmer 3s infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 } 

@@ -33,15 +33,23 @@ body {
     background-color: #1a1a1a;
     color: #fff;
     background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    padding: 20px;
 }
 
 .profile-container {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto;
     padding: 30px;
     background-color: #222;
     box-shadow: 0 0 20px rgba(255, 136, 0, 0.5);
     border: 3px solid var(--theme-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .header {
@@ -52,6 +60,17 @@ body {
     margin: -30px -30px 30px -30px;
     border-bottom: 3px solid #fff;
     background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: repeating-linear-gradient(45deg, var(--theme-color), var(--theme-color) 10px, #222 10px, #222 20px);
 }
 
 .header h1 {
@@ -62,6 +81,7 @@ body {
     text-transform: uppercase;
     text-shadow: 3px 3px 0 #000;
     transform: skew(-5deg);
+    display: inline-block;
 }
 
 h2 {
@@ -72,24 +92,139 @@ h2 {
     padding-bottom: 10px;
     color: var(--theme-color);
     text-shadow: 2px 2px 0 #000;
+    margin-top: 40px;
+}
+
+h3 {
+    font-family: var(--bold-font);
+    font-size: 22px;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 p {
     font-size: 18px;
     line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-ul {
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.profile-image img {
+    width: 100%;
+    border: 3px solid var(--theme-color);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.profile-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.profile-info h2 {
+    margin-top: 0;
+}
+
+/* Skills Section */
+.skills-list {
     list-style-type: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-li {
-    padding: 10px 15px;
-    margin-bottom: 10px;
+.skills-list li {
+    padding: 12px 15px;
     background-color: rgba(255, 136, 0, 0.2);
     border-left: 4px solid var(--theme-color);
     font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: rgba(255, 136, 0, 0.3);
+    transform: translateX(5px);
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.project-card {
+    background-color: #333;
+    border: 2px solid var(--theme-color);
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 136, 0, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #444;
+}
+
+.project-card h3 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: var(--theme-color);
+}
+
+.project-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-links a, .social-links p {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: rgba(255, 136, 0, 0.1);
+    border-left: 4px solid var(--theme-color);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 136, 0, 0.3);
+    transform: translateX(5px);
+    color: var(--theme-color);
 }
 
 .back-button {
@@ -106,10 +241,39 @@ li {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     font-size: 18px;
+    position: relative;
+    z-index: 1;
 }
 
 .back-button:hover {
     background-color: #fff;
     color: var(--theme-color);
     transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+    
+    .header {
+        margin: -20px -20px 20px -20px;
+    }
+    
+    .header h1 {
+        font-size: 36px;
+    }
+    
+    .profile-section {
+        flex-direction: column;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
 } 

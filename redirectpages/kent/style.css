@@ -241,6 +241,9 @@ body::after {
     line-height: 1.6;
     opacity: 0.9;
     font-family: 'Backstreet', sans-serif;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .education-section {

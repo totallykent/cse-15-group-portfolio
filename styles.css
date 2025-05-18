@@ -211,7 +211,7 @@ body {
 /* Updated member color sections to match specified neon colors */
 .christine { 
     background-color: #ff0043; /* Neon red */
-    background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
+    background-image: url('./redirectpages/christine/assets/tine.jpg');
     border-bottom: 4px solid #ff0043;
 }
 .christine:hover { 
@@ -226,7 +226,7 @@ body {
 
 .earl { 
     background-color: #00ff00; /* Neon green */
-    background-image: url('./redirectpages/earl/imgs/photopeds.png');
+    background-image: url('./redirectpages/earl/imgs/49bfca37-3127-44d5-ab69-4897815682ae.jfif');
     border-bottom: 4px solid #00ff00;
 }
 .earl:hover { 
@@ -241,7 +241,7 @@ body {
 
 .kent {
     background-color: #00b3ff; /* Neon blue */
-    background-image: url('./assets/imgs/asa.jpg');
+    background-image: url('./redirectpages/kent/assets/doblepatchako.jpg');
     border-bottom: 4px solid #00b3ff;
 }
 .kent:hover {
@@ -256,7 +256,7 @@ body {
 
 .aeron { 
     background-color: #ff9500; /* Neon orange */
-    background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+    background-image: url('./redirectpages/aeron/assets/a3.jpg');
     border-bottom: 4px solid #ff9500;
 }
 .aeron:hover { 
@@ -271,7 +271,7 @@ body {
 
 .charlene { 
     background-color: #ff00ff; /* Neon pink */
-    background-image: url('https://www.transparenttextures.com/patterns/subtle-dark-vertical.png');
+    background-image: url('./redirectpages/charlene/assets/cha.jpg');
     border-bottom: 4px solid #ff00ff;
 }
 .charlene:hover { 
@@ -336,15 +336,39 @@ body {
     overflow: hidden;
 }
 
-/* Rhombus shape with person-specific colors */
+/* Social diagonal shape updates - unique for each person */
+.social-row:nth-of-type(1) .diagonal-shape {
+    background-image: url('./redirectpages/kent/assets/soc.png');
+    clip-path: polygon(0 0, 100% 0, 75% 100%, -25% 100%);
+}
+
+.social-row:nth-of-type(2) .diagonal-shape-reverse {
+    background-image: url('./redirectpages/earl/imgs/soc.png');
+    clip-path: polygon(0 0, 100% 0, 135% 100%, 35% 100%);
+}
+
+.social-row:nth-of-type(3) .diagonal-shape {
+    background-image: url('./redirectpages/christine/assets/soc.png');
+    clip-path: polygon(0 0, 100% 0, 70% 100%, -30% 100%);
+}
+
+.social-row:nth-of-type(4) .diagonal-shape-reverse {
+    background-image: url('./redirectpages/aeron/assets/a2.jpg');
+    clip-path: polygon(0 0, 100% 0, 128% 100%, 28% 100%);
+}
+
+.social-row:nth-of-type(5) .diagonal-shape {
+    background-image: url('./redirectpages/charlene/assets/cha.jpg');
+    clip-path: polygon(0 0, 100% 0, 68% 100%, -32% 100%);
+}
+
+/* Update the base diagonal shape classes to remove the specific background images */
 .diagonal-shape {
     background-color: black;
-    background-image: url('test.gif'); 
     background-size: cover;
     background-position: center;
     height: 100%;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 70% 100%, -30% 100%);
     transform: translateX(-100%);
     transition: transform 0.8s ease;
     position: relative;
@@ -365,12 +389,10 @@ body {
 
 .diagonal-shape-reverse {
     background-color: black;
-    background-image: url('test.gif');
     background-size: cover;
     background-position: center;
     height: 100%;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 130% 100%, 30% 100%);
     transform: translateX(100%);
     transition: transform 0.8s ease;
     position: relative;

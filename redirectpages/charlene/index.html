@@ -5,8 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charlene's Profile</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <a href="../../index.html" class="back-button">Back to Main Page</a>
+    <div class="container">
+        <a href="../../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+        
+        <header class="profile-header">
+            <div class="profile-image">
+                <img src="assets/tsa.jpg" alt="Charlene's Profile Picture" onerror="this.src='https://via.placeholder.com/200'">
+            </div>
+            <h1>Charlene Jocel Layo</h1>
+            <p class="tagline">Computer Science Student</p>
+        </header>
+
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>I’m a driven Computer Science student with a deep passion for web development and a curious mind for all things tech. I thrive on crafting meaningful digital experiences and transforming ideas into interactive, user-friendly solutions. Whether I’m exploring the latest frameworks or building something from scratch, I’m constantly pushing myself to learn, grow, and innovate in the ever-evolving world of programming.</p>
+        </section>
+
+        <section class="skills-section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Front-end Development</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Database</h3>
+                    <p>Basic SQL</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="interests-section">
+            <h2>Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <i class="fas fa-book"></i>
+                    <p>Reading</p>
+                </div>
+                <div class="interest-card">
+                    <i class="fas fa-music"></i>
+                    <p>Music</p>
+                </div>
+                <div class="interest-card">
+                    <i class="fas fa-camera"></i>
+                    <p>Photography</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://facebook.com/charlenejocel.layo" target="_blank" class="social-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/tsarlin.dyosil" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="charlenejocellayo@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
